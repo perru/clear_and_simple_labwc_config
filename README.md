@@ -2,7 +2,7 @@
 ![screenshot](
  "Clear and Simple Labwc config")
 
-## No bload, no fuck, only needed
+## No bloat, no fuck, only needed
 
 ### Packages
 
