@@ -1,0 +1,40 @@
+############# DESKTOP ENVIRONNMENT STARTUP ###############
+
+# Set wallpaper
+swaybg -i ~/Backgrounds/archsimple.png >/dev/null 2>&1 &
+
+# Panel
+waybar >/dev/null 2>&1 &
+
+##########################################################
+
+################### SOFTWARE STARTUP #####################
+
+# Fan control + overclock
+corectrl --minimize-systray >/dev/null 2>&1 &
+
+# nm-applet
+nm-applet --indicator >/dev/null 2>&1 &
+
+# Bluetooth
+blueman-applet >/dev/null 2>&1 &
+
+# Kanshi
+kanshi >/dev/null 2>&1 &
+
+# KDE Connect
+kdeconnectd >/dev/null 2>&1 &
+kdeconnect-indicator >/dev/null 2>&1 &
+
+# Sunshine
+sunshine >/dev/null 2>&1 &
+
+##########################################################
+
+# Enable num pad
+#numlockx >/dev/null 2>&1 &
+
+# Screen temperature
+#wlsunset -l 45.68982740594973 -L 3.6072144712537764 >/dev/null 2>&1 &
+
+#(sleep 5 && /usr/bin/noisetorch -i -s alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo.monitor -t 95) >/dev/null 2>&1 &

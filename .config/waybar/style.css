@@ -1,0 +1,249 @@
+/* =============================================================================
+ *
+ * Waybar configuration
+ *
+ * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
+ *
+ * =========================================================================== */
+
+/* -----------------------------------------------------------------------------
+ * Keyframes
+ * -------------------------------------------------------------------------- */
+
+@keyframes blink-warning {
+    70% {
+        color: white;
+    }
+
+    to {
+        color: white;
+        background-color: orange;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+      color: white;
+    }
+
+    to {
+        color: white;
+        background-color: red;
+    }
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Base styles
+ * -------------------------------------------------------------------------- */
+
+/* Reset all styles */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* The whole bar */
+#waybar {
+    background: #323232;
+    color: white;
+    font-family: Cantarell, Noto Sans, sans-serif;
+    font-size: 16px;
+}
+
+/* Each module */
+#battery,
+#clock.date, 
+#cpu,
+#custom-keyboard-layout,
+/* #custom-firefox, */
+#memory,
+#mode,
+#network,
+#bluetooth,
+#pulseaudio,
+#temperature,
+#tray,
+#clock.time {
+    padding-left: 5px;
+    padding-right: 10px;
+    border-right: 1px solid #444444;
+}
+
+#custom-power {
+    margin-bottom: -5px;    
+    padding-left: 5px;
+}
+
+
+/* -----------------------------------------------------------------------------
+ * Module styles
+ * -------------------------------------------------------------------------- */
+
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.warning {
+    color: orange;
+}
+
+#battery.critical {
+    color: red;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+#cpu {
+  /* No styles */
+}
+
+#cpu.warning {
+    color: orange;
+}
+
+#cpu.critical {
+    color: red;
+}
+
+#memory {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#memory.warning {
+    color: orange;
+}
+
+#memory.critical {
+    color: red;
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+#mode {
+    background: #64727D;
+    border-top: 2px solid white;
+    /* To compensate for the top border and still have vertical centering */
+    padding-bottom: 2px;
+}
+
+#network {
+    /* No styles */
+}
+
+#network.disconnected {
+    color: orange;
+}
+
+#pulseaudio {
+    /* No styles */
+}
+
+#pulseaudio.muted {
+    /* No styles */
+}
+
+#custom-files,
+#custom-terminal,
+#custom-firefox,
+#custom-steam,
+#custom-lutris,
+#custom-discord  {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#custom-files:hover,
+#custom-terminal:hover,
+#custom-firefox:hover,
+#custom-steam:hover,
+#custom-lutris:hover,
+#custom-discord:hover {
+    background-color: #666666;
+}
+
+#custom-separator {
+  color: orange;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#taskbar {
+    font-size: 16px;
+}
+
+#taskbar button {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#taskbar button.active {
+    background-color: #666666;
+}
+
+#temperature {
+    /* No styles */
+}
+
+#temperature.critical {
+    color: red;
+}
+
+#tray {
+    /* No styles */
+}
+
+#window {
+    font-weight: bold;
+}
+
+#workspaces button {
+    border-top: 2px solid transparent;
+    /* To compensate for the top border and still have vertical centering */
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #888888;
+}
+
+#workspaces button.focused {
+    border-color: #4c7899;
+    color: white;
+    background-color: #285577;
+}
+
+#workspaces button.urgent {
+    border-color: #c9545d;
+    color: #c9545d;
+}
+
+.modules-left {
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.modules-center {
+}
+
+.modules-right {
+    margin-right: 10px;
+}
