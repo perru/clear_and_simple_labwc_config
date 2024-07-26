@@ -321,11 +321,16 @@
 
 <separator label="Menu"/>
 
+ <item label="Screenshot">
+    <action name="Execute"><command>sh -c 'grim -g "`slurp`"'</command></action>
+  </item>
+
+<separator label="Menu"/>
+
   <item label="Reconfigure labwc">
     <action name="Reconfigure" />
   </item>
  <item label="Killall">
-   <action name="Reconfigure"></action>
     <action name="Execute"><command>killall -SIGUSR2 waybar</command></action>
   </item>
 

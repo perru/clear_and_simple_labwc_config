@@ -175,6 +175,9 @@
     <keybind key="XF86_MonBrightnessDown">
       <action name="Execute"><command>brightnessctl set 10%-</command></action>
     </keybind>
+    <keybind key="Print">
+      <action name="Execute"><command>sh -c 'grim -g "`slurp`"'</command></action>
+    </keybind>
     
   </keyboard>
 

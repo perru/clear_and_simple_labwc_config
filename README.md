@@ -12,3 +12,7 @@ wlogout
 kanshi
 foot
 swaybg
+grim
+slurp
+mako
+
