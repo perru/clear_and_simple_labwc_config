@@ -15,7 +15,7 @@
     <cycleViewOutlines>yes</cycleViewOutlines> -->
   </core>
 
-  <windowSwitcher show="yes" preview="no" outlines="yes" allWorkspaces="no">
+  <windowSwitcher show="yes" preview="yes" outlines="yes" allWorkspaces="no">
       <fields>
       <field content="type" width="25%" />
       <field content="trimmed_identifier" width="25%" />
@@ -160,7 +160,10 @@
     <keybind key="A-Tab">
       <action name="NextWindow" />
     </keybind>
-    <keybind key="XF86_AudioLowerVolume">
+    <keybind key="Print">
+      <action name="Execute"><command>sh -c 'grim -g "`slurp`"'</command></action>
+    </keybind>
+   <!--    <keybind key="XF86_AudioLowerVolume">
       <action name="Execute"><command>amixer sset Master 5%-</command></action>
     </keybind>
     <keybind key="XF86_AudioRaiseVolume">
@@ -169,15 +172,12 @@
     <keybind key="XF86_AudioMute">
       <action name="Execute"><command>amixer sset Master toggle</command></action>
     </keybind>
-    <keybind key="XF86_MonBrightnessUp">
+ <keybind key="XF86_MonBrightnessUp">
       <action name="Execute"><command>brightnessctl set +10%</command></action>
     </keybind>
     <keybind key="XF86_MonBrightnessDown">
       <action name="Execute"><command>brightnessctl set 10%-</command></action>
-    </keybind>
-    <keybind key="Print">
-      <action name="Execute"><command>sh -c 'grim -g "`slurp`"'</command></action>
-    </keybind>
+    </keybind> -->
     
   </keyboard>
 
