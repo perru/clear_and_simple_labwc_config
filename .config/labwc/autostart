@@ -31,6 +31,9 @@ sunshine >/dev/null 2>&1 &
 
 ##########################################################
 
+systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+
 # Enable num pad
 #numlockx >/dev/null 2>&1 &
 
