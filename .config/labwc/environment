@@ -12,7 +12,7 @@ XKB_DEFAULT_LAYOUT=fr
 
 # Force firefox to use wayland backend
 MOZ_ENABLE_WAYLAND=1
-$GRIM_DEFAULT_DIR="/home/perru/Images/Screenshots/"
+GRIM_DEFAULT_DIR="/home/perru/Images/Screenshots/"
 #CLUTTER_BACKEND=wayland
 #SDL_VIDEODRIVER=wayland
 #LIBSEAT_BACKEND=logind
