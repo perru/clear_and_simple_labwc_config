@@ -1,6 +1,6 @@
 ﻿# Clear and Simple Labwc config
 ![screenshot](
- "Clear and Simple Labwc config")
+ https://i.imgur.com/bIwOLKV.png "Exemple")
 
 ## No bloat, no fuck, only needed
 
