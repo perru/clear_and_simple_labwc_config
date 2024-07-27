@@ -25,15 +25,14 @@
     "height": 30,
 
     "modules-left": [
-      "custom/zob",
       "custom/files",
       "custom/terminal",
 	    "custom/firefox",
       "custom/steam",
       "custom/lutris",
       "custom/discord",
-      "custom/separator",
       "wlr/taskbar"
+//      "custom/separator"
     ],
     "modules-center": [
     ],
@@ -57,11 +56,6 @@
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
-
-    "custom/zob": {
-        "format": "︁",
-        "on-click": "root-menu"
-    },
 
     "custom/firefox": {
         "format": "︁",
