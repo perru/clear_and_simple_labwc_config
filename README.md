@@ -15,4 +15,4 @@ swaybg
 grim
 slurp
 mako
-
+ttf-font-awesome 
