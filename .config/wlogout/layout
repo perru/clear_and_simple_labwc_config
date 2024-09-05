@@ -1,0 +1,18 @@
+{
+    "label" : "logout",
+    "action" : "loginctl terminate-user $USER",
+    "text" : "Déconnexion",
+    "keybind" : "d"
+}
+{
+    "label" : "reboot",
+    "action" : "systemctl reboot",
+    "text" : "Redémarrer",
+    "keybind" : "r"
+}
+{
+    "label" : "shutdown",
+    "action" : "systemctl poweroff",
+    "text" : "Eteindre",
+    "keybind" : "s"
+}

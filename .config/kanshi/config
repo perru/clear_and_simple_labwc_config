@@ -1,0 +1,4 @@
+profile {
+  output "ASUSTek COMPUTER INC VG27WQ LCLMDW020565" mode 2560x1440@164.998001Hz position 0,0
+  output "Acer Technologies XV240Y TLVEE0028521" mode 1920x1080@164.834000Hz position 2561,0
+}

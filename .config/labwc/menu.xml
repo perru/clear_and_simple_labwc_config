@@ -5,7 +5,7 @@
 <item label="Terminal"><action name="Execute"><command>foot</command></action></item>
 <item label="Navigateur"><action name="Execute"><command>firefox</command></action></item>
 <item label="Documents"><action name="Execute"><command>thunar</command></action></item>
-<item label="Editeur"><action name="Execute"><command>subl3</command></action></item>
+<item label="Editeur"><action name="Execute"><command>subl</command></action></item>
 <item label="Lutris Proton"><action name="Execute"><command>sh -c "LUTRIS_ENABLE_PROTON=1 lutris"</command></action></item>
 <item label="Slippi Online"><action name="Execute"><command>slippi-launcher</command></action></item>
 
