@@ -1,7 +1,10 @@
 ############# DESKTOP ENVIRONNMENT STARTUP ###############
 
+# Polkit ?
+/usr/bin/lxpolkit 2>&1 &
+
 # Set wallpaper
-swaybg -i ~/Backgrounds/archsimple.png >/dev/null 2>&1 &
+swaybg -i ~/Backgrounds/starry_sky_clouds_sunset_120716_2560x1440.jpg >/dev/null 2>&1 &
 
 # Panel
 waybar >/dev/null 2>&1 &

@@ -74,12 +74,12 @@
 
     "custom/files": {
         "format": "",
-        "on-click": "pcmanfm"
+        "on-click": "thunar"
     },
 
     "custom/discord": {
         "format": "",
-        "on-click": "discord"
+        "on-click": "vesktop"
     },
 
     "custom/lutris": {
