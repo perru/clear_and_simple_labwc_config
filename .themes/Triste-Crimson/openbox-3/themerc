@@ -86,7 +86,7 @@ window.label.text.justify: center
 #window.inactive.label.text.font: text shadow
 
 ### MENU
-menu.border.width: 8
+menu.border.width: 1
 menu.separator.width: 1
 menu.separator.padding.width: 10
 menu.separator.padding.height: 2
