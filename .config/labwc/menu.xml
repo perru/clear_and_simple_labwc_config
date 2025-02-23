@@ -14,6 +14,8 @@
 
 <menu id="applications" label="Applications" execute="xdg_menu --format openbox3-pipe --root-menu /etc/xdg/menus/arch-applications.menu" />
 
+<showIcons>yes</showIcons>
+
 <separator label=""/>
 
  <item label="Screenshot">
