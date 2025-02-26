@@ -6,13 +6,14 @@
 
 ### Packages
 
+foot
+grim
+kanshi
 labwc
+labwc-menu-generator
+mako
+slurp
+swaybg
+ttf-font-awesome
 waybar
 wlogout
-kanshi
-foot
-swaybg
-grim
-slurp
-mako
-ttf-font-awesome 
