@@ -14,8 +14,6 @@
 
 <menu id="applications" label="Applications" execute="labwc-menu-generator -p -I" />
 
-<showIcons>yes</showIcons>
-
 <separator label=""/>
 
  <item label="Screenshot">

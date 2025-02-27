@@ -26,8 +26,8 @@ blueman-applet >/dev/null 2>&1 &
 kanshi >/dev/null 2>&1 &
 
 # KDE Connect
-#kdeconnectd >/dev/null 2>&1 &
-#kdeconnect-indicator >/dev/null 2>&1 &
+kdeconnectd >/dev/null 2>&1 &
+kdeconnect-indicator >/dev/null 2>&1 &
 
 # Sunshine
 #sunshine >/dev/null 2>&1 &
@@ -45,5 +45,5 @@ dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT
 
 #(sleep 5 && /usr/bin/noisetorch -i -s alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo.monitor -t 95) >/dev/null 2>&1 &
 
-mount /mnt/freebox 2>&1 &
+#mount /mnt/freebox 2>&1 &
 
