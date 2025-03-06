@@ -59,7 +59,7 @@
 
     "custom/firefox": {
         "format": "︁",
-        "on-click": "firefox"
+        "on-click": "cachy-browser"
     },
 
     "custom/terminal": {
