@@ -8,7 +8,7 @@
 <item label="Editeur"><action name="Execute"><command>subl</command></action></item>
 <item label="Lutris Proton"><action name="Execute"><command>sh -c "LUTRIS_ENABLE_PROTON=1 lutris"</command></action></item>
 <item label="Slippi Online"><action name="Execute"><command>slippi-launcher</command></action></item>
-<item label="Steam Minimal"><action name="Execute"><command>/usr/bin/steam-runtime -cef-disable-gpu-compositing -cef-disable-gpu steam://open/minigameslist %U</command></action></item>
+<item label="Steam Minimal"><action name="Execute"><command>/usr/bin/steam-native -cef-disable-gpu-compositing -cef-disable-gpu steam://open/minigameslist %U</command></action></item>
 
 <separator label=""/>
 

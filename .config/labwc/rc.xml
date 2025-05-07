@@ -17,10 +17,11 @@
 
   <windowSwitcher show="yes" preview="yes" outlines="yes" allWorkspaces="no">
       <fields>
-      <field content="type" width="25%" />
+      <field content="icon" width="5%" />
+      <!--<field content="type" width="25%" />-->
       <field content="trimmed_identifier" width="25%" />
       <!-- <field content="identifier" width="25%" /> -->
-      <field content="title" width="50%" />
+      <field content="title" width="70%" />
     </fields>
   </windowSwitcher>
 
