@@ -27,3 +27,8 @@ QT_QPA_PLATFORMTHEME=qt6ct
 #GTK2_RC_FILES=/usr/share/themes/Adwaita-dark/gtk-2.0/gtkrc
 #QT_STYLE_OVERRIDE=Adwaita-Dark
 #XDG_CONFIG_HOME="$HOME/.config"
+
+
+#VK_DRIVER_FILES=/usr/share/vulkan/icd.d/radeon_icd.i686.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
+#VK_DRIVER_FILES=/usr/share/vulkan/icd.d/amd_pro_icd32.json:/usr/share/vulkan/icd.d/amd_pro_icd64.json
+#VK_DRIVER_FILES=/usr/share/vulkan/icd.d/amd_icd32.json:/usr/share/vulkan/icd.d/amd_icd64.json

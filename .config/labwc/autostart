@@ -30,7 +30,7 @@ kdeconnectd >/dev/null 2>&1 &
 kdeconnect-indicator >/dev/null 2>&1 &
 
 # Sunshine
-#sunshine >/dev/null 2>&1 &
+sunshine >/dev/null 2>&1 &
 
 ##########################################################
 

@@ -59,7 +59,7 @@
 
     "custom/firefox": {
         "format": "",
-        "on-click": "cachy-browser"
+        "on-click": "librewolf"
     },
 
     "custom/terminal": {
@@ -175,6 +175,7 @@
 
     "network": {
         "interval": 5,
+        "format": "🌐 ⇧ {bandwidthUpOctets} ⇩ {bandwidthDownOctets}",
         //"format-wifi": "  {essid} ({signalStrength}%) ⇧ {bandwidthUpOctets} ⇩ {bandwidthDownOctets}", // Icon: wifi
         //"format-ethernet": "  {ifname}: {ipaddr}/{cidr} ⇧ {bandwidthUpOctets} ⇩ {bandwidthDownOctets}", // Icon: ethernet
         "format-wifi": " ⇧ {bandwidthUpOctets} ⇩ {bandwidthDownOctets}", // Icon: wifi
