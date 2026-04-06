@@ -87,6 +87,7 @@
 #cpu:hover,
 #memory:hover {
     background: @hover;
+    border-radius: 6px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -98,8 +99,8 @@
 #custom-steam,
 #custom-lutris,
 #custom-discord {
-    padding: 0 12px;
-    margin: 4px 2px;
+    padding: 0 12px 0 12px;
+    margin: 4px 6px 4px 0px;
 }
 
 /* -----------------------------------------------------------------------------
