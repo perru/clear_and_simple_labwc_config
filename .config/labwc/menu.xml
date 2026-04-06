@@ -1,47 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
-<menu id="root-menu" label="Openbox 3.5">
+<openbox_menu xmlns="http://openbox.org/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://openbox.org/ file:///usr/share/openbox/menu.xsd">
 
-<item label="Terminal"><action name="Execute"><command>foot</command></action></item>
-<item label="Navigateur"><action name="Execute"><command>librewolf</command></action></item>
-<item label="Documents"><action name="Execute"><command>thunar</command></action></item>
-<item label="Editeur"><action name="Execute"><command>subl</command></action></item>
-<item label="Lutris Proton"><action name="Execute"><command>sh -c "LUTRIS_ENABLE_PROTON=1 lutris"</command></action></item>
-<item label="Slippi Online"><action name="Execute"><command>slippi-launcher</command></action></item>
-<item label="Steam Minimal"><action name="Execute"><command>/usr/bin/steam-native -cef-disable-gpu-compositing -cef-disable-gpu steam://open/minigameslist %U</command></action></item>
+  <menu id="root-menu" label="Menu">
 
-<separator label=""/>
+    <!-- Applications principales -->
+    <item label="Terminal">
+      <action name="Execute"><command>foot</command></action>
+    </item>
 
-<menu id="applications" label="Applications" execute="labwc-menu-generator -p -I" />
+    <item label="Navigateur">
+      <action name="Execute"><command>librewolf</command></action>
+    </item>
 
-<separator label=""/>
+    <item label="Fichiers">
+      <action name="Execute"><command>thunar</command></action>
+    </item>
 
- <item label="Screenshot">
-    <action name="Execute"><command>sh -c 'grim -g "`slurp`"'</command></action>
-  </item>
+    <item label="Éditeur">
+      <action name="Execute"><command>subl</command></action>
+    </item>
 
-<separator label=""/>
+    <item label="Lutris (Proton)">
+      <action name="Execute">
+        <command>sh -c 'LUTRIS_ENABLE_PROTON=1 lutris'</command>
+      </action>
+    </item>
 
-  <item label="Reconfigure labwc">
-    <action name="Reconfigure" />
-  </item>
- <item label="Killall">
-    <action name="Execute"><command>killall -SIGUSR2 waybar</command></action>
-  </item>
+    <item label="Slippi Online">
+       <action name="Execute"><command>slippi-launcher</command></action>
+     </item>
 
-<menu id="root-menu-logout" label="Quitter">
-  <item label="Quitter">
-    <action name="Exit"></action>
-  </item>
-  <item label="Redémarrer">
-    <action name="Execute"><command>systemctl -i reboot</command></action>
-  </item>
-  <item label="Eteindre">
-    <action name="Execute"><command>systemctl -i poweroff</command></action>
-  </item>
-</menu>
+    <item label="Steam (minimal)">
+      <action name="Execute">
+        <command>sh -c 'steam-native -cef-disable-gpu-compositing -cef-disable-gpu'</command>
+      </action>
+    </item>
 
+    <separator/>
 
-</menu>
+    <!-- Applications auto -->
+    <menu id="applications" label="Applications"
+          execute="labwc-menu-generator -p -I" />
+
+    <separator/>
+
+    <!-- Outils -->
+    <item label="Capture écran">
+      <action name="Execute">
+        <command>sh -c 'grim -g "$(slurp)"'</command>
+      </action>
+    </item>
+
+    <separator/>
+
+    <!-- Système -->
+    <item label="Recharger labwc">
+      <action name="Reconfigure"/>
+    </item>
+
+    <item label="Relancer Waybar">
+      <action name="Execute">
+        <command>killall -SIGUSR2 waybar</command>
+      </action>
+    </item>
+
+    <separator/>
+
+    <!-- Session -->
+    <menu id="session" label="Session">
+
+      <item label="Quitter">
+        <action name="Exit"/>
+      </item>
+
+      <item label="Redémarrer">
+        <action name="Execute">
+          <command>systemctl -i reboot</command>
+        </action>
+      </item>
+
+      <item label="Éteindre">
+        <action name="Execute">
+          <command>systemctl -i poweroff</command>
+        </action>
+      </item>
+
+    </menu>
+
+  </menu>
 
 </openbox_menu>
