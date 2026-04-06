@@ -1,279 +1,169 @@
-// =============================================================================
-//
-// Waybar configuration
-//
-// Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
-// https://github.com/Alexays/Waybar/blob/master/man/waybar.5.scd.in
-//
-// =============================================================================
-//
 {
-    // -------------------------------------------------------------------------
-    // Global configuration
-    // -------------------------------------------------------------------------
+  "layer": "top",
+  "position": "bottom",
+  "spacing": 5,
+  "margin": 0,
+  "passthrough": false,
+  "reload_style_on_change": true,
+  "height": 30,
 
-    "layer": "top",
-    "position": "bottom",
-    "spacing": 5,
-    "margin-left": 0,
-    "margin-right": 0,
-    "passthrough": false,
-  //  "mode": overlay,
-    "reload_style_on_change": true,
+  "modules-left": [
+    "custom/files",
+    "custom/terminal",
+    "custom/firefox",
+    "custom/steam",
+    "custom/lutris",
+    "custom/discord",
+    "wlr/taskbar"
+  ],
 
-    // If height property would be not present, it'd be calculated dynamically
-    "height": 30,
+  "modules-center": [],
 
-    "modules-left": [
-      "custom/files",
-      "custom/terminal",
-	  "custom/firefox",
-      "custom/steam",
-      "custom/lutris",
-      "custom/discord",
-      "wlr/taskbar"
-//      "custom/separator"
-    ],
-    "modules-center": [
-    ],
-    "modules-right": [
-        "network",
-        "memory",
-        "cpu",
- //       "temperature",
-//        "backlight",
-//      "custom/keyboard-layout",
-//        "battery",
-        "tray",
-//        "bluetooth",
-        "pulseaudio",
-        "clock#date",
-        "clock#time",
-        "custom/power"
-    ],
+  "modules-right": [
+    "network",
+    "cpu",
+    "memory",
+    "pulseaudio",
+    "tray",
+    "clock#date",
+    "clock#time",
+    "custom/power"
+  ],
 
+  // ---------------- CUSTOM APPS ----------------
 
-    // -------------------------------------------------------------------------
-    // Modules
-    // -------------------------------------------------------------------------
-
-    "custom/firefox": {
-        "format": "",
-        "on-click": "librewolf"
-    },
-
-    "custom/terminal": {
-        "format": "",
-        "on-click": "foot"
-    },
-
-    "custom/steam": {
-        "format": "",
-        "on-click": "steam-native"
-    },
-
-    "custom/files": {
-        "format": "",
-        "on-click": "thunar"
-    },
-
-    "custom/discord": {
-        "format": "",
-        "on-click": "vesktop"
-    },
-
-    "custom/lutris": {
-        "format": "",
-        "on-click": "lutris"
-    },
-
-    "custom/separator": {
-    "format": "|",
-    "interval": "once",
+  "custom/firefox": {
+    "format": "",
+    "on-click": "librewolf",
     "tooltip": false
-	},
+  },
 
-//    "battery": {
-//        "interval": 10,
-//        "states": {
-//            "warning": 30,
-//            "critical": 15
-//        },
-//        // Connected to AC
-//        "format": "  {icon}  {capacity}%", // Icon: bolt
-//        // Not connected to AC
-//        "format-discharging": "{icon}  {capacity}%",
-//        "format-icons": [
-//            "", // Icon: battery-full
-//            "", // Icon: battery-three-quarters
-//            "", // Icon: battery-half
-//            "", // Icon: battery-quarter
-//            ""  // Icon: battery-empty
-//        ],
-//        "tooltip": true
-//    },
+  "custom/terminal": {
+    "format": "",
+    "on-click": "foot",
+    "tooltip": false
+  },
 
-    "clock#time": {
-        "interval": 1,
-        "format": "{:%H:%M}",
-        "tooltip": false,
-        "timezone": "Europe/Paris"
+  "custom/steam": {
+    "format": "",
+    "on-click": "steam-native",
+    "tooltip": false
+  },
+
+  "custom/files": {
+    "format": "",
+    "on-click": "thunar",
+    "tooltip": false
+  },
+
+  "custom/discord": {
+    "format": "",
+    "on-click": "vesktop",
+    "tooltip": false
+  },
+
+  "custom/lutris": {
+    "format": "",
+    "on-click": "lutris",
+    "tooltip": false
+  },
+
+  // ---------------- CLOCK ----------------
+
+  "clock#time": {
+    "interval": 1,
+    "format": "{:%H:%M}",
+    "timezone": "Europe/Paris",
+    "tooltip": false
+  },
+
+  "clock#date": {
+    "format": "  {:%d %b %Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
     },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
 
-    "clock#date": {
-        "format": "  {:%e %b %Y}", // Icon: calendar-alt
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-                    "mode"          : "year",
-                    "mode-mon-col"  : 3,
-                    "weeks-pos"     : "right",
-                    "on-scroll"     : 1,
-                    "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                              }
-                    },
-        "actions":  {
-                    "on-click-right": "mode",
-                    "on-scroll-up": "tz_up",
-                    "on-scroll-down": "tz_down",
-                    "on-scroll-up": "shift_up",
-                    "on-scroll-down": "shift_down"
-                    }
-    },
+  // ---------------- SYSTEM ----------------
 
-    "cpu": {
-        "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
-        "states": {
-          "warning": 70,
-          "critical": 90
-        }
-    },
+  "cpu": {
+    "interval": 3,
+    "format": " {usage}%",
+    "format-alt": " {usage}% ({load})",
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
+  },
 
-//    "custom/keyboard-layout": {
-//      "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-//      // Interval set only as a fallback, as the value is updated by signal
-//      "interval": 30,
-//      "format": "  {}", // Icon: keyboard
-//      // Signal sent by Sway key binding (~/.config/sway/key-bindings)
-//      "signal": 1, // SIGHUP
-//      "tooltip": false
-//    },
+  "memory": {
+    "interval": 3,
+    "format": "  {percentage}%", 
+    "format-alt": " {used}Go",
+    "states": {
+      "warning": 70,
+      "critical": 90
+    }
+  },
 
-   "memory": {
-       "interval": 5,
-       "format": "  {}%", // Icon: memory
-       "states": {
-           "warning": 70,
-           "critical": 90
-       }
-   },
+  // ---------------- NETWORK ----------------
 
-    "network": {
-        "interval": 5,
-        "format": "🌐 ⇧ {bandwidthUpOctets} ⇩ {bandwidthDownOctets}",
-        //"format-wifi": "  {essid} ({signalStrength}%) ⇧ {bandwidthUpOctets} ⇩ {bandwidthDownOctets}", // Icon: wifi
-        //"format-ethernet": "  {ifname}: {ipaddr}/{cidr} ⇧ {bandwidthUpOctets} ⇩ {bandwidthDownOctets}", // Icon: ethernet
-        "format-wifi": " ⇧ {bandwidthUpOctets} ⇩ {bandwidthDownOctets}", // Icon: wifi
-        "format-ethernet": " ⇧ {bandwidthUpOctets} ⇩ {bandwidthDownOctets}", // Icon: ethernet
-        "format-disconnected": "⚠  Disconnected",
-        "tooltip-format": "{ifname}: {ipaddr}",
-    },
+  "network": {
+    "interval": 3,
+    "format-wifi": " {bandwidthDownBytes}",
+    "format-ethernet": " {bandwidthDownBytes}",
+    "format-disconnected": "⚠ Offline",
+    "tooltip-format": "{ifname} • {ipaddr}"
+  },
 
-//    "sway/mode": {
-//        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
-//        "tooltip": false
-//    },
+  // ---------------- AUDIO ----------------
 
-	"wlr/taskbar": {
-		"format": "{icon}",
-		"icon-size": 14,
-		"icon-theme": "Numix-Circle",
-		"tooltip-format": "{title}",
-		"on-click": "minimize-raise",
-		"on-click-middle": "close",
-		"on-click-right": "minimize-raise",
-	},
-
-//    "sway/workspaces": {
-//        "all-outputs": false,
-//        "disable-scroll": true,
-//        "format": "{icon} {name}",
-//        "format-icons": {
-//            "1:www": "龜", // Icon: firefox-browser
-//            "2:mail": "", // Icon: mail
-//            "3:editor": "", // Icon: code
-//            "4:terminals": "", // Icon: terminal
-//            "5:portal": "", // Icon: terminal
-//            "urgent": "",
-//            "focused": "",
-//            "default": ""
-//        }
-//    },
-
-"pulseaudio": {
-    //"scroll-step": 1,
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{icon}  {volume}%",
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
     "format-muted": "",
     "format-icons": {
-        "headphones": "",
-        "handsfree": "",
-        "headset": "",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": ["", ""]
+      "default": ["", ""]
     },
     "on-click": "pavucontrol"
-},
+  },
 
-    "temperature": {
-      "critical-threshold": 80,
-      "interval": 5,
-      "format": "{icon}  {temperatureC}°C",
-      "format-icons": [
-          "", // Icon: temperature-empty
-          "", // Icon: temperature-quarter
-          "", // Icon: temperature-half
-          "", // Icon: temperature-three-quarters
-          ""  // Icon: temperature-full
-      ],
-      "tooltip": true
-    },
+  // ---------------- TASKBAR ----------------
 
-//    "backlight": {
-//        "device": "acpi_video1",
-//        "format": "{percent}% {icon}",
-//        "states": [0,50],
-//        "format-icons": ["", ""]
-//    },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 16,
+    "tooltip-format": "{title}",
+    "on-click": "minimize-raise",
+    "on-click-middle": "close"
+  },
 
-    "tray": {
-        "icon-size": 21,
-        "spacing": 10
-    },
+  // ---------------- TRAY ----------------
 
-//    "bluetooth": {
-//	  "format": " {status}",
-//	  "format-connected": " {device_alias}",
-//	  "format-connected-battery": " {device_alias} {device_battery_percentage}%",
-	  // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
-//	  "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
-//	  "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-//	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-//	  "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-//	  "on-click": "blueman-manager"
-//},
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8
+  },
 
-"custom/power": {
-    "format" : "⏻ ",
+  // ---------------- POWER ----------------
+
+  "custom/power": {
+    "format": "⏻",
     "tooltip": false,
     "on-click": "wlogout"
-    }
-
+  }
 }
