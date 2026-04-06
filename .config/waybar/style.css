@@ -1,254 +1,193 @@
 /* =============================================================================
- *
- * Waybar configuration
- *
- * Configuration reference: https://github.com/Alexays/Waybar/wiki/Configuration
- *
+ * Waybar Style — Optimisé 0.15
  * =========================================================================== */
 
 /* -----------------------------------------------------------------------------
- * Keyframes
+ * Variables (nouveau : facilite le theming)
  * -------------------------------------------------------------------------- */
+@define-color bg #2e2e2e;
+@define-color bg-alt #3a3a3a;
+@define-color border #444;
+@define-color text #ffffff;
+@define-color warning #f39c12;
+@define-color critical #e74c3c;
+@define-color hover #5a5a5a;
+@define-color accent #89b4fa;
 
+/* -----------------------------------------------------------------------------
+ * Animations
+ * -------------------------------------------------------------------------- */
 @keyframes blink-warning {
-    70% {
-        color: white;
-    }
-
     to {
-        color: white;
-        background-color: orange;
+        background-color: @warning;
+        color: @text;
     }
 }
 
 @keyframes blink-critical {
-    70% {
-      color: white;
-    }
-
     to {
-        color: white;
-        background-color: red;
+        background-color: @critical;
+        color: @text;
     }
 }
 
-
 /* -----------------------------------------------------------------------------
- * Base styles
+ * Reset global
  * -------------------------------------------------------------------------- */
-
-/* Reset all styles */
 * {
     border: none;
-    border-radius: 0;
+    border-radius: 0px;
     min-height: 0;
     margin: 0;
     padding: 0;
 }
 
-/* The whole bar */
+/* -----------------------------------------------------------------------------
+ * Bar
+ * -------------------------------------------------------------------------- */
 #waybar {
-    background: #323232;
-    color: white;
+    background: @bg;
+    color: @text;
     font-family: Cantarell, Noto Sans, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
 }
-
-/* Each module */
-#battery,
-#clock.date, 
-#cpu,
-#custom-keyboard-layout,
-/* #custom-firefox, */
-#memory,
-#mode,
-#network,
-#bluetooth,
-#pulseaudio,
-#temperature,
-#tray,
-#clock.time,
-.modules-left > widget:nth-last-child(2) {
-    padding-left: 5px;
-    padding-right: 10px;
-    border-right: 1px solid #444444;
-}
-
-#custom-power {
-    /* margin-bottom: -5px;    */
-    padding-left: 5px;
-}
-
 
 /* -----------------------------------------------------------------------------
- * Module styles
+ * Modules génériques
  * -------------------------------------------------------------------------- */
-
-#battery {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#clock,
+#tray {
+    padding: 0 10px;
+    margin: 4px 2px;
+    background: transparent;
+    border-radius: 6px;
 }
 
-#battery.warning {
-    color: orange;
+/* Séparateur visuel léger */
+.modules-right > widget:not(:last-child),
+.modules-left > widget:not(:last-child) {
+    border-right: 1px solid @border;
 }
 
-#battery.critical {
-    color: red;
-}
-
-#battery.warning.discharging {
-    animation-name: blink-warning;
-    animation-duration: 3s;
-}
-
-#battery.critical.discharging {
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-#clock {
-    font-weight: bold;
-}
-
-#cpu {
-  /* No styles */
-}
-
-#cpu.warning {
-    color: orange;
-}
-
-#cpu.critical {
-    color: red;
-}
-
-#memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#memory.warning {
-    color: orange;
-}
-
-#memory.critical {
-    color: red;
-    animation-name: blink-critical;
-    animation-duration: 2s;
-}
-
-#mode {
-    background: #64727D;
-    border-top: 2px solid white;
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
-}
-
-#network {
-    /* No styles */
-}
-
-#network.disconnected {
-    color: orange;
-}
-
-#pulseaudio {
-    /* No styles */
-}
-
-#pulseaudio.muted {
-    /* No styles */
-}
-
-#custom-files,
-#custom-terminal,
-#custom-firefox,
-#custom-steam,
-#custom-lutris,
-#custom-discord  {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
+/* -----------------------------------------------------------------------------
+ * Hover global (nouveau propre)
+ * -------------------------------------------------------------------------- */
 #custom-files:hover,
 #custom-terminal:hover,
 #custom-firefox:hover,
 #custom-steam:hover,
 #custom-lutris:hover,
-#custom-discord:hover {
-    background-color: #666666;
+#custom-discord:hover,
+#pulseaudio:hover,
+#network:hover,
+#cpu:hover,
+#memory:hover {
+    background: @hover;
 }
 
-#custom-power:hover {
-    color: #FF0000;
+/* -----------------------------------------------------------------------------
+ * Custom apps (gauche)
+ * -------------------------------------------------------------------------- */
+#custom-files,
+#custom-terminal,
+#custom-firefox,
+#custom-steam,
+#custom-lutris,
+#custom-discord {
+    padding: 0 12px;
+    margin: 4px 2px;
 }
 
-/* #custom-separator {
-  color: orange;
-  margin-left: 5px;
-  margin-right: 5px;
-} */
-
-#taskbar {
-    font-size: 16px;
+/* -----------------------------------------------------------------------------
+ * CPU / Memory states
+ * -------------------------------------------------------------------------- */
+#cpu.warning,
+#memory.warning {
+    color: @warning;
 }
 
-#taskbar button {
-    padding-right: 10px;
-    padding-left: 10px;
+#cpu.critical,
+#memory.critical {
+    color: @critical;
 }
 
-#taskbar button.active {
-    background-color: #666666;
+#memory.critical {
+    animation: blink-critical 1.5s infinite alternate;
 }
 
-#temperature {
-    /* No styles */
+/* -----------------------------------------------------------------------------
+ * Network
+ * -------------------------------------------------------------------------- */
+#network.disconnected {
+    color: @warning;
 }
 
-#temperature.critical {
-    color: red;
+/* -----------------------------------------------------------------------------
+ * Audio
+ * -------------------------------------------------------------------------- */
+#pulseaudio.muted {
+    color: @border;
 }
 
-#tray {
-    /* No styles */
-}
-
-#window {
+/* -----------------------------------------------------------------------------
+ * Clock
+ * -------------------------------------------------------------------------- */
+#clock {
     font-weight: bold;
 }
 
-#workspaces button {
-    border-top: 2px solid transparent;
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #888888;
+/* -----------------------------------------------------------------------------
+ * Taskbar
+ * -------------------------------------------------------------------------- */
+#taskbar {
+    font-size: 14px;
 }
 
-#workspaces button.focused {
-    border-color: #4c7899;
-    color: white;
-    background-color: #285577;
+#taskbar button {
+    padding: 0 10px;
+    margin: 4px 2px;
+    border-radius: 6px;
 }
 
-#workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+#taskbar button.active {
+    background: @hover;
 }
 
+#taskbar button:hover {
+    background: @hover;
+}
+
+/* -----------------------------------------------------------------------------
+ * Power button
+ * -------------------------------------------------------------------------- */
+#custom-power {
+    padding: 0 12px;
+    margin: 4px 2px;
+}
+
+#custom-power:hover {
+    background: transparent;
+    color: @critical;
+}
+
+/* -----------------------------------------------------------------------------
+ * Tray
+ * -------------------------------------------------------------------------- */
+#tray {
+    padding: 0 8px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Layout spacing
+ * -------------------------------------------------------------------------- */
 .modules-left {
-    /* padding-left: 10px; */
-    margin-left: 5px; 
-}
-
-.modules-center {
+    margin-left: 6px;
 }
 
 .modules-right {
-    margin-right: 5px;
+    margin-right: 6px;
 }
