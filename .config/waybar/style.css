@@ -76,6 +76,7 @@
 /* -----------------------------------------------------------------------------
  * Hover global (nouveau propre)
  * -------------------------------------------------------------------------- */
+#custom-labwc-menu:hover,
 #custom-files:hover,
 #custom-terminal:hover,
 #custom-firefox:hover,
@@ -93,6 +94,7 @@
 /* -----------------------------------------------------------------------------
  * Custom apps (gauche)
  * -------------------------------------------------------------------------- */
+#custom-labwc-menu,
 #custom-files,
 #custom-terminal,
 #custom-firefox,

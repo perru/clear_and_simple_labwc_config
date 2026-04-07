@@ -8,6 +8,7 @@
   "height": 30,
 
   "modules-left": [
+    "custom/labwc-menu",
     "custom/files",
     "custom/terminal",
     "custom/firefox",
@@ -29,6 +30,14 @@
     "clock#time",
     "custom/power"
   ],
+
+  // ---------------- LABWC MENU ----------------
+  
+  "custom/labwc-menu": {
+    "format": "☰",
+    "on-click": "echo key alt+f1 | dotool",
+    "tooltip": false
+  },
 
   // ---------------- CUSTOM APPS ----------------
 
@@ -167,3 +176,4 @@
     "on-click": "wlogout"
   }
 }
+

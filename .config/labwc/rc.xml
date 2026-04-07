@@ -67,6 +67,15 @@
     <numlock>on</numlock>
     <repeatRate>25</repeatRate>
     <repeatDelay>600</repeatDelay>
+    <keybind key="A-F1">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+        <position>
+          <x>0</x>
+          <y>-0</y>
+        </position>
+      </action>
+    </keybind>
     <keybind key="A-K">
       <action name="ToggleKeybinds"></action>
     </keybind>

@@ -6,6 +6,7 @@
 
 ### Packages
 
+dotool
 foot
 grim
 kanshi
