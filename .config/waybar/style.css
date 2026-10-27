@@ -1,9 +1,9 @@
 /* =============================================================================
- * Waybar Style — Optimisé 0.15
- * =========================================================================== */
+ * Waybar Style — Optimisé 0.16 (rendu conservé / CSS nettoyé)
+ * ========================================================================== */
 
 /* -----------------------------------------------------------------------------
- * Variables (nouveau : facilite le theming)
+ * Variables
  * -------------------------------------------------------------------------- */
 @define-color bg #2e2e2e;
 @define-color bg-alt #3a3a3a;
@@ -17,13 +17,6 @@
 /* -----------------------------------------------------------------------------
  * Animations
  * -------------------------------------------------------------------------- */
-@keyframes blink-warning {
-    to {
-        background-color: @warning;
-        color: @text;
-    }
-}
-
 @keyframes blink-critical {
     to {
         background-color: @critical;
@@ -36,14 +29,14 @@
  * -------------------------------------------------------------------------- */
 * {
     border: none;
-    border-radius: 0px;
+    border-radius: 0;
     min-height: 0;
     margin: 0;
     padding: 0;
 }
 
 /* -----------------------------------------------------------------------------
- * Bar
+ * Base bar
  * -------------------------------------------------------------------------- */
 #waybar {
     background: @bg;
@@ -53,28 +46,61 @@
 }
 
 /* -----------------------------------------------------------------------------
- * Modules génériques
+ * Modules communs
  * -------------------------------------------------------------------------- */
+#custom-labwc-menu,
+#custom-files,
+#custom-terminal,
+#custom-firefox,
+#custom-steam,
+#custom-lutris,
+#custom-discord,
+#custom-power,
 #cpu,
 #memory,
 #network,
 #pulseaudio,
 #clock,
-#tray {
-    padding: 0 10px;
+#tray,
+#taskbar button {
     margin: 4px 6px 4px 0px;
-    background: transparent;
+    padding: 0 10px;
     border-radius: 6px;
+    transition: all 0.18s ease;
 }
 
-/* Séparateur visuel léger */
-.modules-right > widget:not(:last-child),
-.modules-left > widget:not(:last-child) {
+/* Apps custom */
+#custom-labwc-menu,
+#custom-files,
+#custom-terminal,
+#custom-firefox,
+#custom-steam,
+#custom-lutris,
+#custom-discord,
+#custom-power {
+    padding: 0 12px;
+}
+
+/* Tray spécifique */
+#tray {
+    padding: 0 8px;
+}
+
+/* Taskbar spacing */
+#taskbar button {
+    margin: 4px 2px;
+}
+
+/* -----------------------------------------------------------------------------
+ * Séparateurs
+ * -------------------------------------------------------------------------- */
+.modules-left > widget:not(:last-child),
+.modules-right > widget:not(:last-child) {
     border-right: 1px solid @border;
 }
 
 /* -----------------------------------------------------------------------------
- * Hover global (nouveau propre)
+ * Hover global
  * -------------------------------------------------------------------------- */
 #custom-labwc-menu:hover,
 #custom-files:hover,
@@ -83,33 +109,21 @@
 #custom-steam:hover,
 #custom-lutris:hover,
 #custom-discord:hover,
-#pulseaudio:hover,
-#network:hover,
 #cpu:hover,
-#memory:hover {
+#memory:hover,
+#network:hover,
+#pulseaudio:hover,
+#taskbar button:hover,
+#taskbar button.active {
     background: @hover;
-    border-radius: 6px;
 }
 
 /* -----------------------------------------------------------------------------
- * Custom apps (gauche)
- * -------------------------------------------------------------------------- */
-#custom-labwc-menu,
-#custom-files,
-#custom-terminal,
-#custom-firefox,
-#custom-steam,
-#custom-lutris,
-#custom-discord {
-    padding: 0 12px 0 12px;
-    margin: 4px 6px 4px 0px;
-}
-
-/* -----------------------------------------------------------------------------
- * CPU / Memory states
+ * États système
  * -------------------------------------------------------------------------- */
 #cpu.warning,
-#memory.warning {
+#memory.warning,
+#network.disconnected {
     color: @warning;
 }
 
@@ -122,16 +136,6 @@
     animation: blink-critical 1.5s infinite alternate;
 }
 
-/* -----------------------------------------------------------------------------
- * Network
- * -------------------------------------------------------------------------- */
-#network.disconnected {
-    color: @warning;
-}
-
-/* -----------------------------------------------------------------------------
- * Audio
- * -------------------------------------------------------------------------- */
 #pulseaudio.muted {
     color: @border;
 }
@@ -144,44 +148,11 @@
 }
 
 /* -----------------------------------------------------------------------------
- * Taskbar
- * -------------------------------------------------------------------------- */
-#taskbar {
-    font-size: 14px;
-}
-
-#taskbar button {
-    padding: 0 10px;
-    margin: 4px 2px;
-    border-radius: 6px;
-}
-
-#taskbar button.active {
-    background: @hover;
-}
-
-#taskbar button:hover {
-    background: @hover;
-}
-
-/* -----------------------------------------------------------------------------
  * Power button
  * -------------------------------------------------------------------------- */
-#custom-power {
-    padding: 0 12px;
-    margin: 4px 2px;
-}
-
 #custom-power:hover {
     background: transparent;
     color: @critical;
-}
-
-/* -----------------------------------------------------------------------------
- * Tray
- * -------------------------------------------------------------------------- */
-#tray {
-    padding: 0 8px;
 }
 
 /* -----------------------------------------------------------------------------
@@ -192,5 +163,5 @@
 }
 
 .modules-right {
-    margin-right: 6px;
+    margin-right: 0px;
 }

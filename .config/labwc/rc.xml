@@ -1,21 +1,14 @@
 <?xml version="1.0"?>
 
-<!--
-  This file contains all supported config elements & attributes with
-  default values.
--->
-
 <labwc_config>
 
   <core>
     <decoration>server</decoration>
     <gap>0</gap>
     <adaptiveSync>fullscreen</adaptiveSync>
-    <!-- <cycleViewPreview>no</cycleViewPreview>
-    <cycleViewOutlines>yes</cycleViewOutlines> -->
+    <hdr>no</hdr>
   </core>
 
-  <!-- <font><theme> can be defined without an attribute to set all places -->
   <theme>
     <name>Triste-Crimson</name>
     <titleLayout>LIMC</titleLayout>
@@ -38,32 +31,20 @@
     <focusNew>yes</focusNew>
     <followMouse>no</followMouse>
     <focusLast>yes</focusLast>
-    <focusDelay>50</focusDelay>
     <raiseOnFocus>yes</raiseOnFocus>
   </focus>
 
-  <!-- Set range to 0 to disable window snapping completely -->
   <snapping>
-    <range>0</range>
+    <range inner="0" outer="0" />
     <topMaximize>no</topMaximize>
   </snapping>
 
-  <!--
-    Keybind actions are specified in labwc-actions(5)
-    The following keybind modifiers are supported:
-      W - window/super/logo
-      A - alt
-      C - ctrl
-      S - shift
-    Use <keyboard><default /> to load all the default keybinds (those listed
-    below). If the default keybinds are largely what you want, a sensible
-    approach could be to start the <keyboard> section with a <default />
-    element, and then (re-)define any special binds you need such as launching
-    your favourite terminal or application launcher.
-  -->
+  <windowRules>
+    <windowRule identifier="hearthstonedecktracker.exe"
+                allowAlwaysOnTop="yes" />
+  </windowRules>
+
   <keyboard>
-    <!-- <default /> -->
-    
     <numlock>on</numlock>
     <repeatRate>25</repeatRate>
     <repeatDelay>600</repeatDelay>
@@ -118,59 +99,30 @@
     <keybind key="A-Space">
       <action name="ShowMenu"><menu>client-menu</menu></action>
     </keybind>
-    <keybind key="A-Tab">
-      <action name="NextWindow" />
-    </keybind>
-    <keybind key="Print"> 
+    <keybind key="Print">
       <action name="Execute">
         <command>sh -c 'grim -g "$(slurp)"'</command>
       </action>
     </keybind>
-   <keybind key="XF86_AudioLowerVolume">
+    <keybind key="XF86_AudioLowerVolume">
       <action name="Execute"><command>pactl set-sink-volume @DEFAULT_SINK@ -1%</command></action>
     </keybind>
     <keybind key="XF86_AudioRaiseVolume">
       <action name="Execute"><command>pactl set-sink-volume @DEFAULT_SINK@ +1%</command></action>
     </keybind>
-    <!--
-    <keybind key="XF86_AudioMute">
-      <action name="Execute"><command>amixer sset Master toggle</command></action>
+    <keybind key="W-t">
+      <action name="VirtualOutputAdd" output_name="moreland"/>
+      <action name="Execute"
+              command="sh -c 'sleep 0.2; /home/perru/Scripts/moreland-start.sh'"/>
     </keybind>
- <keybind key="XF86_MonBrightnessUp">
-      <action name="Execute"><command>brightnessctl set +10%</command></action>
+    <keybind key="W-S-t">
+      <action name="Execute" command="pkill -x moreland"/>
+      <action name="VirtualOutputRemove" output_name="moreland"/>
     </keybind>
-    <keybind key="XF86_MonBrightnessDown">
-      <action name="Execute"><command>brightnessctl set 10%-</command></action>
-    </keybind> -->
-    
   </keyboard>
 
-  <!--
-    Multiple <mousebind> can exist within one <context>
-    Multiple <actions> can exist within one <mousebind>
-    Currently, the only openbox-action not supported is "Unshade"
-  -->
   <mouse>
-    <!-- <default /> -->
-    <!-- time is in ms -->
     <doubleClickTime>300</doubleClickTime>
-
-    <context name="Frame">
-      <mousebind button="A-Left" action="Press" />
-        <!-- <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind> -->
-      <mousebind button="A-Left" action="Drag" />
-        <!-- <action name="Move"/>
-      </mousebind>-->
-      <mousebind button="A-Right" action="Press" />
-        <!-- <action name="Focus"/>
-        <action name="Raise"/>
-      </mousebind>-->
-      <mousebind button="A-Right" action="Drag" />
-        <!--<action name="Resize"/>
-      </mousebind>-->
-    </context>
 
     <context name="Top">
       <mousebind button="Left" action="Drag">
@@ -243,7 +195,7 @@
     </context>
 
     <context name="Iconify">
-      <mousebind button="left" action="Click">
+      <mousebind button="Left" action="Click">
         <action name="Iconify"/>
       </mousebind>
     </context>
@@ -278,31 +230,13 @@
       <mousebind button="Middle" action="Press">
         <action name="ShowMenu"><menu>root-menu</menu></action>
       </mousebind>
-    </context> 
-    
+    </context>
+
   </mouse>
 
-  <!--
-    The *category* element can be set to touch, non-touch, default or the name
-    of a device. You can obtain device names by running *libinput list-devices*
-    as root or member of the input group.
-    Tap is set to *yes* be default. All others are left blank in order to use
-    device defaults.
-    All values are [yes|no] except for:
-      - pointerSpeed [-1.0 to 1.0]
-      - accelProfile [flat|adaptive]
-      - tapButtonMap [lrm|lmr]
-  -->
   <libinput>
     <device category="non-touch">
-      <naturalScroll></naturalScroll>
-      <leftHanded></leftHanded>
-      <pointerSpeed></pointerSpeed>
-      <accelProfile></accelProfile>
       <tap>no</tap>
-      <tapButtonMap></tapButtonMap>
-      <middleEmulation></middleEmulation>
-      <disableWhileTyping></disableWhileTyping>
     </device>
   </libinput>
 

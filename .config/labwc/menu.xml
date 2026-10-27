@@ -37,6 +37,63 @@
         <command>sh -c 'steam-native -cef-disable-gpu-compositing -cef-disable-gpu'</command>
       </action>
     </item>
+    <separator/>
+
+    <!-- Menu IA -->
+    <menu id="ia-menu" label="IA">
+      <item label="Start Qwen3-Coder">
+        <action name="Execute">
+          <command>/home/perru/Scripts/llm-launcher.sh start qwen</command>
+        </action>
+      </item>
+      <item label="Start Qwen3-Coder-Next">
+        <action name="Execute">
+          <command>/home/perru/Scripts/llm-launcher.sh start qwen-next</command>
+        </action>
+      </item>
+      <item label="Start Qwen3.6">
+        <action name="Execute">
+          <command>/home/perru/Scripts/llm-launcher.sh start qwen3.6</command>
+        </action>
+      </item>
+      <item label="Start Gemma">
+        <action name="Execute">
+          <command>/home/perru/Scripts/llm-launcher.sh start gemma</command>
+        </action>
+      </item>
+      <item label="Start AceStep">
+        <action name="Execute">
+          <command>/home/perru/Scripts/llm-launcher.sh start acestep</command>
+        </action>
+      </item>
+      <separator/>
+      <item label="Update llama.cpp">
+        <action name="Execute">
+          <command>/home/perru/Scripts/llm-launcher.sh update-llama</command>
+        </action>
+      </item>
+      <item label="Update acestep.cpp">
+        <action name="Execute">
+          <command>/home/perru/Scripts/llm-launcher.sh update-acestep</command>
+        </action>
+      </item>
+      <separator/>
+      <item label="Status">
+        <action name="Execute">
+          <command>/home/perru/Scripts/llm-launcher.sh status</command>
+        </action>
+      </item>
+      <item label="Stop Server">
+        <action name="Execute">
+          <command>/home/perru/Scripts/llm-launcher.sh stop</command>
+        </action>
+      </item>
+      <item label="Force Stop">
+        <action name="Execute">
+          <command>/home/perru/Scripts/llm-launcher.sh force-stop</command>
+        </action>
+      </item>
+    </menu>
 
     <separator/>
 

@@ -3,12 +3,18 @@
 # This allows xdg-desktop-portal-wlr to function (e.g. for screen-recording)
 XDG_CURRENT_DESKTOP=wlroots
 
-# Set keyboard layout to Swedish
+# Set keyboard layout to French
 XKB_DEFAULT_LAYOUT=fr
+
+# Masquer EVDI pour LABWC
+#WLR_DRM_DEVICES=/dev/dri/card1
 
 # Set two keyboard layouts and toggle between them using alt+shift
 # XKB_DEFAULT_LAYOUT=se,de
 # XKB_DEFAULT_OPTIONS=grp:alt_shift_toggle
+
+# Proton Wayland
+# PROTON_USE_WAYLAND=1
 
 # Force firefox to use wayland backend
 MOZ_ENABLE_WAYLAND=1
@@ -32,3 +38,6 @@ QT_QPA_PLATFORMTHEME=qt6ct
 #VK_DRIVER_FILES=/usr/share/vulkan/icd.d/radeon_icd.i686.json:/usr/share/vulkan/icd.d/radeon_icd.x86_64.json
 #VK_DRIVER_FILES=/usr/share/vulkan/icd.d/amd_pro_icd32.json:/usr/share/vulkan/icd.d/amd_pro_icd64.json
 #VK_DRIVER_FILES=/usr/share/vulkan/icd.d/amd_icd32.json:/usr/share/vulkan/icd.d/amd_icd64.json
+
+# Force Vulkan
+WLR_RENDERER=vulkan

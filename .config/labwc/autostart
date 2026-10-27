@@ -4,7 +4,7 @@
 /usr/bin/lxpolkit 2>&1 &
 
 # Set wallpaper
-swaybg -i ~/Backgrounds/starry_sky_clouds_sunset_120716_2560x1440.jpg >/dev/null 2>&1 &
+swaybg -i ~/Backgrounds/6452983.jpg >/dev/null 2>&1 &
 
 # Panel
 waybar >/dev/null 2>&1 &
@@ -32,10 +32,13 @@ kdeconnect-indicator >/dev/null 2>&1 &
 # Sunshine
 sunshine >/dev/null 2>&1 &
 
+# Miniatures waybar Proton
+~/Scripts/steam-desktop-sync.sh >/dev/null 2>&1 &
+
 ##########################################################
 
 systemctl --user import-environment DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=labwc
 
 # Enable num pad
 #numlockx >/dev/null 2>&1 &

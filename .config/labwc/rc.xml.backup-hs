@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+
+<labwc_config>
+
+  <core>
+    <decoration>server</decoration>
+    <gap>0</gap>
+    <adaptiveSync>fullscreen</adaptiveSync>
+    <hdr>no</hdr>
+  </core>
+
+  <theme>
+    <name>Triste-Crimson</name>
+    <titleLayout>LIMC</titleLayout>
+    <cornerRadius>8</cornerRadius>
+    <font place="ActiveWindow">
+      <name>sans</name>
+      <size>10</size>
+    </font>
+    <font place="MenuItem">
+      <name>sans</name>
+      <size>10</size>
+    </font>
+    <font place="OnScreenDisplay">
+      <name>sans</name>
+      <size>10</size>
+    </font>
+  </theme>
+
+  <focus>
+    <focusNew>yes</focusNew>
+    <followMouse>no</followMouse>
+    <focusLast>yes</focusLast>
+    <raiseOnFocus>yes</raiseOnFocus>
+  </focus>
+
+  <snapping>
+    <range inner="0" outer="0" />
+    <topMaximize>no</topMaximize>
+  </snapping>
+
+  <keyboard>
+    <numlock>on</numlock>
+    <repeatRate>25</repeatRate>
+    <repeatDelay>600</repeatDelay>
+    <keybind key="A-F1">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
+        <position>
+          <x>0</x>
+          <y>-0</y>
+        </position>
+      </action>
+    </keybind>
+    <keybind key="A-K">
+      <action name="ToggleKeybinds"></action>
+    </keybind>
+    <keybind key="W-d">
+      <action name="Execute"><command>fuzzel</command></action>
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="A-F4">
+      <action name="Close" />
+    </keybind>
+    <keybind key="W-a">
+      <action name="ToggleMaximize" />
+    </keybind>
+    <keybind key="A-Left">
+      <action name="MoveToEdge"><direction>left</direction></action>
+    </keybind>
+    <keybind key="A-Right">
+      <action name="MoveToEdge"><direction>right</direction></action>
+    </keybind>
+    <keybind key="A-Up">
+      <action name="MoveToEdge"><direction>up</direction></action>
+    </keybind>
+    <keybind key="A-Down">
+      <action name="MoveToEdge"><direction>down</direction></action>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="SnapToEdge"><direction>left</direction></action>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="SnapToEdge"><direction>right</direction></action>
+    </keybind>
+    <keybind key="W-Up">
+      <action name="SnapToEdge"><direction>up</direction></action>
+    </keybind>
+    <keybind key="W-Down">
+      <action name="SnapToEdge"><direction>down</direction></action>
+    </keybind>
+    <keybind key="A-Space">
+      <action name="ShowMenu"><menu>client-menu</menu></action>
+    </keybind>
+    <keybind key="Print">
+      <action name="Execute">
+        <command>sh -c 'grim -g "$(slurp)"'</command>
+      </action>
+    </keybind>
+    <keybind key="XF86_AudioLowerVolume">
+      <action name="Execute"><command>pactl set-sink-volume @DEFAULT_SINK@ -1%</command></action>
+    </keybind>
+    <keybind key="XF86_AudioRaiseVolume">
+      <action name="Execute"><command>pactl set-sink-volume @DEFAULT_SINK@ +1%</command></action>
+    </keybind>
+    <keybind key="W-t">
+      <action name="VirtualOutputAdd" output_name="moreland"/>
+      <action name="Execute"
+              command="sh -c 'sleep 0.2; /home/perru/Scripts/moreland-start.sh'"/>
+    </keybind>
+    <keybind key="W-S-t">
+      <action name="Execute" command="pkill -x moreland"/>
+      <action name="VirtualOutputRemove" output_name="moreland"/>
+    </keybind>
+  </keyboard>
+
+  <mouse>
+    <doubleClickTime>300</doubleClickTime>
+
+    <context name="Top">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="Left">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="Right">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="Bottom">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="TRCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="BRCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="TLCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+    <context name="BLCorner">
+      <mousebind button="Left" action="Drag">
+        <action name="Resize"/>
+      </mousebind>
+    </context>
+
+    <context name="TitleBar">
+      <mousebind button="Left" action="Press">
+        <action name="Focus" />
+        <action name="Raise" />
+      </mousebind>
+      <mousebind button="Right" action="Click">
+        <action name="Focus" />
+        <action name="Raise" />
+        <action name="ShowMenu" menu="client-menu" />
+      </mousebind>
+    </context>
+
+    <context name="Title">
+      <mousebind button="Left" action="Drag">
+        <action name="Move" />
+      </mousebind>
+      <mousebind button="Left" action="DoubleClick">
+        <action name="ToggleMaximize" />
+      </mousebind>
+    </context>
+
+    <context name="Maximize">
+      <mousebind button="Left" action="Click">
+        <action name="Focus"/>
+        <action name="Raise"/>
+        <action name="ToggleMaximize"/>
+      </mousebind>
+    </context>
+
+    <context name="Iconify">
+      <mousebind button="Left" action="Click">
+        <action name="Iconify"/>
+      </mousebind>
+    </context>
+
+    <context name="Close">
+      <mousebind button="Left" action="Click">
+        <action name="Close"/>
+      </mousebind>
+    </context>
+
+    <context name="Client">
+      <mousebind button="Left" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+      <mousebind button="Middle" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+      <mousebind button="Right" action="Press">
+        <action name="Focus"/>
+        <action name="Raise"/>
+      </mousebind>
+    </context>
+
+    <context name="Root">
+      <mousebind button="Left" action="Press">
+      </mousebind>
+      <mousebind button="Right" action="Press">
+        <action name="ShowMenu"><menu>root-menu</menu></action>
+      </mousebind>
+      <mousebind button="Middle" action="Press">
+        <action name="ShowMenu"><menu>root-menu</menu></action>
+      </mousebind>
+    </context>
+
+  </mouse>
+
+  <libinput>
+    <device category="non-touch">
+      <tap>no</tap>
+    </device>
+  </libinput>
+
+</labwc_config>
